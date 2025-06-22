@@ -23,7 +23,11 @@
         tailwind.config = {
             darkMode: 'class',
             theme: {
-                extend: {}
+                extend: {
+                    colors: {
+                        'custom-dark': '#161618',
+                    }
+                }
             }
         }
     </script>
@@ -39,7 +43,7 @@
         }
     </style>
 </head>
-<body class="bg-white text-black dark:bg-black dark:text-white flex flex-col">
+<body class="bg-white text-black dark:bg-custom-dark dark:text-white flex flex-col">
 
     <!-- Main content area that grows to push the footer down, while centering the content block -->
     <main class="flex-grow flex items-center justify-center">
