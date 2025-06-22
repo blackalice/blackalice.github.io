@@ -48,7 +48,7 @@
             transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.0);
         }
         .expand-content.expanded {
-            max-height: 9001px; /* Adjust as needed, should be larger than the content's height */
+            max-height: 9001px; /* It's over 9000! Adjust as needed. */
         }
 		.inlinelink{
 		    text-decoration: underline;
@@ -106,7 +106,7 @@
                         <div class="p-4 mt-2 border border-gray-200 dark:border-gray-700 rounded-lg space-y-3">
                             
                             <!-- Project 1 -->
-                            <div>
+                            <div id="project-1">
                                 <button class="project-toggle w-full flex justify-between items-baseline group">
                                     <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">Jack Daniel's - Jack Daniel’s x Parisa Tennessee Honey Boots<span class="project-arrow ml-2">↓</span></span>
                                     <span class="text-gray-500 dark:text-gray-400">2024</span>
@@ -117,13 +117,13 @@
                                             <iframe class="w-full h-full" src="https://www.youtube.com/embed/0WhEvtlj_JI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
                                         <p class="text-sm"><b>Main Tools:</b> Stable Diffusion XL, Adobe Photoshop</p>
-                                        <p class="text-sm">Coming soon</p>
+                                        <p class="text-sm"></p>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Project 2 -->
-                             <div>
+                             <div id="project-2">
                                 <button class="project-toggle w-full flex justify-between items-baseline group">
                                     <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">British Gas - The Things Launch Content <span class="project-arrow ml-2">↓</span></span>
                                     <span class="text-gray-500 dark:text-gray-400">2025</span>
@@ -134,12 +134,12 @@
                                             <img src="https://placehold.co/1280x720/e2e8f0/7d7d7d?text=Project+Image" alt="Placeholder image for a project" class="w-full h-full object-cover rounded-md">
                                         </div>
                                         <p class="text-sm"><b>Tools:</b> Google Imagen, Google VEO2, Adobe Photoshop, Adobe After Effects</p>
-                                        <p class="text-sm">Coming soon</p>
+                                        <p class="text-sm"></p>
                                     </div>
                                 </div>
                             </div>
 							<!-- Project 3 -->
-                             <div>
+                             <div id="project-3">
                                 <button class="project-toggle w-full flex justify-between items-baseline group">
                                     <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">Toyota - ■■■■ ■■ ■■■ ■■■■■■ <span class="project-arrow ml-2">↓</span></span>
                                     <span class="text-gray-500 dark:text-gray-400">2024</span>
@@ -147,7 +147,7 @@
                                 <div class="project-content expand-content">
                                     <div class="p-4 mt-2 space-y-4">
                                         <div class="aspect-video">
-                                            <img src="images/NDA.webp" alt="NDA" class="w-full h-full object-cover rounded-md">
+                                            <img src="images/NDA.webp" alt="NDA" class="w-full h-full object-cover rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/1280x720/e2e8f0/7d7d7d?text=NDA';">
                                         </div>
                                         <p class="text-sm"><b>Tools:</b> Stable Diffusion XL, Photoshop, Runway</p>
                                         <p class="text-sm">NDA'd to death, but I love this project. Worked with Simon Spilsbury</p>
@@ -155,7 +155,7 @@
                                 </div>
                             </div>
                             <!-- Project 4 -->
-                             <div>
+                             <div id="project-4">
                                 <button class="project-toggle w-full flex justify-between items-baseline group">
                                     <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">Hawkstone - Social Content <span class="project-arrow ml-2">↓</span></span>
                                     <span class="text-gray-500 dark:text-gray-400">2024-2025</span>
@@ -166,12 +166,12 @@
                                             <img src="https://placehold.co/1280x720/e2e8f0/7d7d7d?text=Project+Image" alt="Placeholder image for a project" class="w-full h-full object-cover rounded-md">
                                         </div>
                                         <p class="text-sm"><b>Tools:</b> Adobe Photoshop, Adobe After Effects, Google VEO2/3, Runway Gen3/4</p>
-                                        <p class="text-sm">Coming soon</p>
+                                        <p class="text-sm"></p>
                                     </div>
                                 </div>
                             </div>
                             <!-- Project 5 -->
-                             <div>
+                             <div id="project-5">
                                 <button class="project-toggle w-full flex justify-between items-baseline group">
                                     <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">Microsoft - Sora in Azure OpenAI <span class="project-arrow ml-2">↓</span></span>
                                     <span class="text-gray-500 dark:text-gray-400">2025</span>
@@ -186,10 +186,22 @@
                                     </div>
                                 </div>
                             </div>
-							
-							
-
-
+							<!-- Project 6 -->
+                             <div id="project-6">
+                                <button class="project-toggle w-full flex justify-between items-baseline group">
+                                    <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">Personal - DDR Score Scraper & Analyser <span class="project-arrow ml-2">↓</span></span>
+                                    <span class="text-gray-500 dark:text-gray-400">2024</span>
+                                </button>
+                                <div class="project-content expand-content">
+                                    <div class="p-4 mt-2 space-y-4">
+                                        <div class="aspect-video">
+                                            <img src="images/ddr.webp" alt="Placeholder image for a project" class="w-full h-full object-cover rounded-md">
+                                        </div>
+                                        <p class="text-sm"><b>Tools:</b> Google Gemini, BeautifulSoup, Gradio </p>
+                                        <p class="text-sm">A tool to scrape DDR scores from an unoffical E-Amusement server and analyise them. Create all sorts of graphs and stats, for fun and no profit. Extremly niche, but super cool to see how I've improved as a player over time! Likely wouldn't exist if the server owner just made an API, you know?</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -279,8 +291,8 @@
 
         // --- Image Hover Logic ---
         const aboutImage = document.getElementById('about-image');
-        const originalImageSrc = 'images/stu.webp';
-        const hoverImageSrc = 'images/pickles.webp'; // A different image for hover
+        const originalImageSrc = 'stu.webp';
+        const hoverImageSrc = 'pickles.webp'; // A different image for hover
 
         aboutImage.addEventListener('mouseenter', () => {
             aboutImage.src = hoverImageSrc;
@@ -307,9 +319,55 @@
             btn.addEventListener('click', function() {
                 const content = this.nextElementSibling;
                 const arrow = this.querySelector('.project-arrow');
+                const projectDiv = this.parentElement;
+                const projectId = projectDiv.id;
                 const isExpanded = content.classList.toggle('expanded');
+                
                 arrow.textContent = isExpanded ? '↑' : '↓';
+
+                if (isExpanded) {
+                    // Add hash to URL for deep linking
+                    history.pushState(null, '', '#' + projectId);
+                } else {
+                    // If the closing project's hash is in the URL, remove it
+                    if(window.location.hash === '#' + projectId) {
+                         history.pushState(null, '', window.location.pathname + window.location.search);
+                    }
+                }
             });
+        });
+
+        // --- Anchor Link Logic ---
+        window.addEventListener('load', () => {
+            const hash = window.location.hash;
+            if (hash) {
+                // Find the project div by ID (e.g., hash is #project-1)
+                const projectDiv = document.querySelector(hash);
+
+                if (projectDiv && projectDiv.closest('#work-content')) {
+                    // Find the main work container and expand it
+                    if (!workContent.classList.contains('expanded')) {
+                        workContent.classList.add('expanded');
+                        workArrow.textContent = '↑';
+                    }
+
+                    // Find the project's toggle button and content
+                    const toggleButton = projectDiv.querySelector('.project-toggle');
+                    const projectContent = toggleButton.nextElementSibling;
+                    const projectArrow = toggleButton.querySelector('.project-arrow');
+
+                    // Expand the specific project
+                    if (projectContent && !projectContent.classList.contains('expanded')) {
+                        projectContent.classList.add('expanded');
+                        projectArrow.textContent = '↑';
+                    }
+
+                    // Scroll to the project
+                    setTimeout(() => {
+                        projectDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 500); // Delay to allow the expand animation to finish
+                }
+            }
         });
     </script>
 </body>
