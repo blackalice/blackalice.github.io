@@ -48,7 +48,7 @@
             transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.0);
         }
         .expand-content.expanded {
-            max-height: 1000px; /* Adjust as needed, should be larger than the content's height */
+            max-height: 9001px; /* Adjust as needed, should be larger than the content's height */
         }
 		.inlinelink{
 		    text-decoration: underline;
@@ -96,6 +96,103 @@
                     <a href="mailto:stu@rtfoy.co.uk" class="hover:text-red-600 dark:hover:text-red-500">email me! ↗</a>
                     <a href="mailto:stu@rtfoy.co.uk" class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(stu@rtfoy.co.uk)</a>
                 </div>
+             <!-- Work Section -->
+                <div>
+                    <button id="work-toggle" class="w-full flex justify-between items-center group">
+                        <span class="group-hover:text-red-600 dark:group-hover:text-red-500 flex items-center">my work <span id="work-arrow" class="ml-2">↓</span></span>
+                        <span class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(selected projects)</span>
+                    </button>
+                    <div id="work-content" class="expand-content">
+                        <div class="p-4 mt-2 border border-gray-200 dark:border-gray-700 rounded-lg space-y-3">
+                            
+                            <!-- Project 1 -->
+                            <div>
+                                <button class="project-toggle w-full flex justify-between items-baseline group">
+                                    <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">Jack Daniel's - Jack Daniel’s x Parisa Tennessee Honey Boots<span class="project-arrow ml-2">↓</span></span>
+                                    <span class="text-gray-500 dark:text-gray-400">2024</span>
+                                </button>
+                                <div class="project-content expand-content">
+                                    <div class="p-4 mt-2 space-y-4">
+                                        <div class="aspect-video">
+                                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/0WhEvtlj_JI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                        <p class="text-sm"><b>Main Tools:</b> Stable Diffusion XL, Adobe Photoshop</p>
+                                        <p class="text-sm">Coming soon</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 2 -->
+                             <div>
+                                <button class="project-toggle w-full flex justify-between items-baseline group">
+                                    <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">British Gas - The Things Launch Content <span class="project-arrow ml-2">↓</span></span>
+                                    <span class="text-gray-500 dark:text-gray-400">2025</span>
+                                </button>
+                                <div class="project-content expand-content">
+                                    <div class="p-4 mt-2 space-y-4">
+                                        <div class="aspect-video">
+                                            <img src="https://placehold.co/1280x720/e2e8f0/7d7d7d?text=Project+Image" alt="Placeholder image for a project" class="w-full h-full object-cover rounded-md">
+                                        </div>
+                                        <p class="text-sm"><b>Tools:</b> Google Imagen, Google VEO2, Adobe Photoshop, Adobe After Effects</p>
+                                        <p class="text-sm">Coming soon</p>
+                                    </div>
+                                </div>
+                            </div>
+							<!-- Project 3 -->
+                             <div>
+                                <button class="project-toggle w-full flex justify-between items-baseline group">
+                                    <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">Toyota - ■■■■ ■■ ■■■ ■■■■■■ <span class="project-arrow ml-2">↓</span></span>
+                                    <span class="text-gray-500 dark:text-gray-400">2024</span>
+                                </button>
+                                <div class="project-content expand-content">
+                                    <div class="p-4 mt-2 space-y-4">
+                                        <div class="aspect-video">
+                                            <img src="images/nda.webp" alt="NDA" class="w-full h-full object-cover rounded-md">
+                                        </div>
+                                        <p class="text-sm"><b>Tools:</b> Stable Diffusion XL, Photoshop, Runway</p>
+                                        <p class="text-sm">NDA'd to death, but I love this project. Worked with Simon Spilsbury</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Project 4 -->
+                             <div>
+                                <button class="project-toggle w-full flex justify-between items-baseline group">
+                                    <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">Hawkstone - Social Content <span class="project-arrow ml-2">↓</span></span>
+                                    <span class="text-gray-500 dark:text-gray-400">2024-2025</span>
+                                </button>
+                                <div class="project-content expand-content">
+                                    <div class="p-4 mt-2 space-y-4">
+                                        <div class="aspect-video">
+                                            <img src="https://placehold.co/1280x720/e2e8f0/7d7d7d?text=Project+Image" alt="Placeholder image for a project" class="w-full h-full object-cover rounded-md">
+                                        </div>
+                                        <p class="text-sm"><b>Tools:</b> Adobe Photoshop, Adobe After Effects, Google VEO2/3, Runway Gen3/4</p>
+                                        <p class="text-sm">Coming soon</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Project 5 -->
+                             <div>
+                                <button class="project-toggle w-full flex justify-between items-baseline group">
+                                    <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">Microsoft - Sora in Azure OpenAI <span class="project-arrow ml-2">↓</span></span>
+                                    <span class="text-gray-500 dark:text-gray-400">2025</span>
+                                </button>
+                                <div class="project-content expand-content">
+                                    <div class="p-4 mt-2 space-y-4">
+                                        <div class="aspect-video">
+                                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/IkF2HwCmoJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                        <p class="text-sm"><b>Tools:</b> Microsoft Azure, OpenAI Sora, ComfyUI, Elevenlabs, FFMPEG Python, Google Gemini, ChatGPT 4o</p>
+                                        <p class="text-sm">Automated video creation, creating video, scripts, voiceovers and prompts all from a simple drop down menu. Custom ComfyUI tooling was made to work with the unreleased Sora API, along with additional nodes for script writing and audiomixing.</p>
+                                    </div>
+                                </div>
+                            </div>
+							
+							
+
+
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Bluesky Link -->
                 <div class="flex justify-between items-center">
@@ -132,13 +229,6 @@
                     <a href="https://letterboxd.com/stuart_foy/" class="hover:text-red-600 dark:hover:text-red-500">bad movie opinions ↗</a>
                     <a href="https://letterboxd.com/stuart_foy/" class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(letterboxd)</a>
                 </div>
-
-                <!-- Coming Soon (Not a link) -->
-                <div class="flex justify-between items-center">
-                    <span>coming soon!</span>
-                    <span class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(my work)</span>
-                </div>
-
             </div>
         </div>
     </main>
@@ -189,8 +279,8 @@
 
         // --- Image Hover Logic ---
         const aboutImage = document.getElementById('about-image');
-        const originalImageSrc = 'stu.webp';
-        const hoverImageSrc = 'pickles.webp'; // A different image for hover
+        const originalImageSrc = 'images/stu.webp';
+        const hoverImageSrc = 'images/pickles.webp'; // A different image for hover
 
         aboutImage.addEventListener('mouseenter', () => {
             aboutImage.src = hoverImageSrc;
@@ -198,6 +288,28 @@
 
         aboutImage.addEventListener('mouseleave', () => {
             aboutImage.src = originalImageSrc;
+        });
+
+        // --- Work Section Toggle Logic ---
+        const workToggleBtn = document.getElementById('work-toggle');
+        const workContent = document.getElementById('work-content');
+        const workArrow = document.getElementById('work-arrow');
+
+        workToggleBtn.addEventListener('click', function() {
+            const isExpanded = workContent.classList.toggle('expanded');
+            workArrow.textContent = isExpanded ? '↑' : '↓';
+        });
+
+        // --- Project Toggles Logic ---
+        const projectToggleBtns = document.querySelectorAll('.project-toggle');
+
+        projectToggleBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const arrow = this.querySelector('.project-arrow');
+                const isExpanded = content.classList.toggle('expanded');
+                arrow.textContent = isExpanded ? '↑' : '↓';
+            });
         });
     </script>
 </body>
