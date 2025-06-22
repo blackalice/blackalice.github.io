@@ -25,7 +25,7 @@
             theme: {
                 extend: {
                     colors: {
-                        'custom-dark': '#161618',
+                        'custom-dark': '#0B1215',
                     }
                 }
             }
@@ -41,6 +41,19 @@
             /* Use dynamic viewport height to account for mobile browser UI */
             min-height: 100dvh;
         }
+        /* Style for the expandable content section for a smooth transition */
+        .expand-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+        }
+        .expand-content.expanded {
+            max-height: 500px; /* Adjust as needed, should be larger than the content's height */
+        }
+		.inlinelink{
+		    text-decoration: underline;
+        }
+		
     </style>
 </head>
 <body class="bg-white text-black dark:bg-custom-dark dark:text-white flex flex-col">
@@ -53,12 +66,30 @@
             <!-- Header Section -->
             <div class="flex justify-between items-center mb-6">
                 <h1 class="font-bold">the temporary homepage of stuart foy</h1>
-                <!-- Added padding and nowrap to prevent wrapping on smaller screens -->
                 <p class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(AOL™ Keyword: stu)</p>
             </div>
 
             <!-- Links Section -->
             <div class="space-y-3">
+                
+                <!-- About me section Wrapper -->
+                <div>
+                    <button id="about-toggle" class="w-full flex justify-between items-center group">
+                        <span class="group-hover:text-red-600 dark:group-hover:text-red-500 flex items-center">who? <span id="about-arrow" class="ml-2">↓</span></span>
+                        <span class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(about me)</span>
+                    </button>
+                    <div id="about-content" class="expand-content">
+                        <div class="p-4 mt-2 border border-gray-200 dark:border-gray-700 rounded-lg flex items-start space-x-4">
+                            <img id="about-image" src="stu.webp" alt="A photo of Stuart Foy" class="rounded-md w-24 h-24" onerror="this.onerror=null;this.src='https://placehold.co/100x100/e2e8f0/7d7d7d?text=Image+not+found';">
+                            <p class="text-sm">
+                                <b>Stuart Foy</b> is a <b>Creative Innovation Designer</b> <i>(or Creative Technologist, or Content Creator, or Designer, or Creative, or Motion Designer depending on the day)</i>.<br><br>
+                                They're currently at <a class="inlinelink" href="https://www.tandpgroup.com/">T&P</a> where they've been since 2018 and has lived through enough name changes that they've lost count.<br><br>
+                                They love to play with new technlogy, old technlogy and things in general. They started their career as a designer but realised they loved doing too many things to stay in a single discipline.<br><br>
+                                Outside of work they can be found playing <a class="inlinelink" href="http://instagram.com/p/DJy18t8oRZj/">DanceDanceRevolution</a>  at the arcade, enjoying standup comedy, going on long walks with their camera, supporting 2025 Scottish Cup Winnners Aberdeen and enjoying all things cute and fun.
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- Email Link -->
                 <div class="flex justify-between items-center">
@@ -101,7 +132,7 @@
                     <a href="https://letterboxd.com/stuart_foy/" class="hover:text-red-600 dark:hover:text-red-500">bad movie opinions ↗</a>
                     <a href="https://letterboxd.com/stuart_foy/" class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(letterboxd)</a>
                 </div>
-                
+
                 <!-- Coming Soon (Not a link) -->
                 <div class="flex justify-between items-center">
                     <span>coming soon!</span>
@@ -123,13 +154,12 @@
     </footer>
 
     <script>
-        // Get references to the theme toggle button and icons
+        // --- Theme Toggle Logic ---
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
         const htmlElement = document.documentElement;
 
-        // Function to set the correct button icon based on the current theme
         function setButtonIcon() {
             if (htmlElement.classList.contains('dark')) {
                 themeToggleLightIcon.classList.remove('hidden');
@@ -139,22 +169,36 @@
                 themeToggleLightIcon.classList.add('hidden');
             }
         }
-
-        // Event listener for the theme toggle button
         themeToggleBtn.addEventListener('click', function() {
-            // Toggle the 'dark' class on the HTML element
             htmlElement.classList.toggle('dark');
-            
-            // Update localStorage with the new theme preference
             const isDarkMode = htmlElement.classList.contains('dark');
             localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-
-            // Update the button icon
             setButtonIcon();
         });
-
-        // Set the initial state of the button icon when the page loads
         setButtonIcon();
+
+        // --- About Section Toggle Logic ---
+        const aboutToggleBtn = document.getElementById('about-toggle');
+        const aboutContent = document.getElementById('about-content');
+        const aboutArrow = document.getElementById('about-arrow');
+
+        aboutToggleBtn.addEventListener('click', function() {
+            const isExpanded = aboutContent.classList.toggle('expanded');
+            aboutArrow.textContent = isExpanded ? '↑' : '↓';
+        });
+
+        // --- Image Hover Logic ---
+        const aboutImage = document.getElementById('about-image');
+        const originalImageSrc = 'stu.webp';
+        const hoverImageSrc = 'pickles.webp'; // A different image for hover
+
+        aboutImage.addEventListener('mouseenter', () => {
+            aboutImage.src = hoverImageSrc;
+        });
+
+        aboutImage.addEventListener('mouseleave', () => {
+            aboutImage.src = originalImageSrc;
+        });
     </script>
 </body>
 </html>
