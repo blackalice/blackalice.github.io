@@ -253,9 +253,18 @@
         </div>
     </main>
     
+    <!-- Colophon Section -->
+    <div id="colophon-content" class="expand-content max-w-3xl mx-auto w-full px-4 sm:px-8">
+        <div class="p-4 mb-4 border border-gray-200 dark:border-gray-700 rounded-lg">
+            <h3 class="font-bold mb-2">Colophon</h3>
+            <p class="text-sm">This page was built with HTML, Tailwind CSS, and a sprinkle of vanilla JavaScript. The live "Now Playing" data is fetched securely using Cloudflare Workers, "Last Watched" is scraped using web.scraper.workers.dev. The font is Menlo. The concept was developed collaboratively with Gemini 2.5 Pro.</p>
+        </div>
+    </div>
+    
     <!-- Copyright Footer, anchored to the bottom -->
     <footer class="text-center text-gray-500 dark:text-gray-400 text-sm p-4 relative">
-        &copy; Stuart Foy 2025
+        <span>&copy; Stuart Foy 2025</span>
+        <button id="colophon-toggle-btn" class="underline hover:text-red-600 dark:hover:text-red-500 ml-2">Colophon</button>
         <!-- Theme switcher button -->
         <button id="theme-toggle" class="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">
             <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -333,6 +342,15 @@
             });
         });
 
+        // --- Colophon Toggle Logic ---
+        const colophonToggleBtn = document.getElementById('colophon-toggle-btn');
+        const colophonContent = document.getElementById('colophon-content');
+
+        colophonToggleBtn.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default button behavior
+            colophonContent.classList.toggle('expanded');
+        });
+
         // --- Anchor Link & API Logic ---
         window.addEventListener('load', () => {
             // --- Anchor Link Logic ---
@@ -397,16 +415,11 @@
                 .then(data => {
                     const scrapedText = data.result[selector] && data.result[selector][0];
                     if (scrapedText) {
-                        // The text is messy, so we need to parse it carefully.
-                        // Example: "Jun 2025 15 Materialists 2025 2025 × ★★½ Read the review"
                         const parts = scrapedText.split(/\s+/);
-                        // Find the first part that is a 4-digit year. The film title is everything before it, after the date.
-                        let yearIndex = -1;
                         let titleParts = [];
                         let foundYear = false;
-                        for(let i = 3; i < parts.length; i++) { // Start after Month, Day, Year
+                        for(let i = 3; i < parts.length; i++) {
                            if (/^\d{4}$/.test(parts[i]) && !foundYear) {
-                               yearIndex = i;
                                foundYear = true;
                            }
                            if(!foundYear){
