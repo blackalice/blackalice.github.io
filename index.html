@@ -231,10 +231,14 @@
                 </div>
 
                 <!-- Last.fm Link -->
-                <div class="flex justify-between items-center py-3">
-                    <a href="https://www.last.fm/user/Rem1xed" class="hover:text-red-600 dark:hover:text-red-500">scrobbling is still cool ↗</a>
-                    <a href="https://www.last.fm/user/Rem1xed" class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(last.fm)</a>
+                <div class="py-3">
+                    <div class="flex justify-between items-center">
+                        <a href="https://www.last.fm/user/Rem1xed" class="hover:text-red-600 dark:hover:text-red-500">scrobbling is still cool ↗</a>
+                        <a href="https://www.last.fm/user/Rem1xed" class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(last.fm)</a>
+                    </div>
+                    <div id="lastfm-track" class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-left">Loading...</div>
                 </div>
+
 
                 <!-- Letterboxd Link -->
                 <div class="flex justify-between items-center py-3">
@@ -325,37 +329,62 @@
             });
         });
 
-        // --- Anchor Link Logic ---
+        // --- Anchor Link & Last.fm Logic ---
         window.addEventListener('load', () => {
+            // --- Anchor Link Logic ---
             const hash = window.location.hash;
             if (hash) {
-                // Find the project div by ID (e.g., hash is #project-1)
                 const projectDiv = document.querySelector(hash);
-
                 if (projectDiv && projectDiv.closest('#work-content')) {
-                    // Find the main work container and expand it
                     if (!workContent.classList.contains('expanded')) {
                         workContent.classList.add('expanded');
                         workArrow.textContent = '↑';
                     }
-
-                    // Find the project's toggle button and content
                     const toggleButton = projectDiv.querySelector('.project-toggle');
                     const projectContent = toggleButton.nextElementSibling;
                     const projectArrow = toggleButton.querySelector('.project-arrow');
-
-                    // Expand the specific project
                     if (projectContent && !projectContent.classList.contains('expanded')) {
                         projectContent.classList.add('expanded');
                         projectArrow.textContent = '↑';
                     }
-
-                    // Scroll to the project
                     setTimeout(() => {
                         projectDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }, 500); // Delay to allow the expand animation to finish
+                    }, 500);
                 }
             }
+
+            // --- Last.fm Logic ---
+            // IMPORTANT: Replace this with the actual URL of your deployed Cloudflare Worker
+            const workerUrl = 'https://lastfm-proxy-rem1xed.beangamer.workers.dev/'; 
+            const trackElement = document.getElementById('lastfm-track');
+
+            fetch(workerUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Worker responded with status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.recenttracks && data.recenttracks.track && data.recenttracks.track.length > 0) {
+                        const track = data.recenttracks.track[0];
+                        const artist = track.artist['#text'];
+                        const song = track.name;
+                        const isNowPlaying = track['@attr'] && track['@attr'].nowplaying;
+
+                        if (isNowPlaying) {
+                            trackElement.textContent = `Now Playing: ${song} by ${artist}`;
+                        } else {
+                            trackElement.textContent = `Last Played: ${song} by ${artist}`;
+                        }
+                    } else {
+                        trackElement.textContent = 'Could not fetch recent track.';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching Last.fm data via Worker:', error);
+                    trackElement.textContent = 'Error fetching song data.';
+                });
         });
     </script>
 </body>
