@@ -14,8 +14,7 @@
         .expand-content {
             max-height: 0;
             overflow: hidden;
-            will-change: max-height;
-            transition: max-height 0.7s cubic-bezier(0.25,0.1,0.25,1);
+            transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.0);
         }
         .expand-content.expanded {
             max-height: 9001px; /* It's over 9000! Adjust as needed. */
@@ -23,11 +22,20 @@
         /* Style for the rotating arrow on toggle buttons */
         .toggle-arrow {
             display: inline-block; /* Ensures the transform property works */
-            transition: transform 0.3s ease; /* Slightly increased duration for arrow rotation */
+            transition: transform 0.2s ease-in-out;
         }
 
         .toggle-arrow.rotated {
             transform: rotate(180deg);
+        }
+
+        /* Styles for the project metadata grid */
+        .project-meta b {
+            font-weight: normal;
+            color: #6b7280; /* Corresponds to text-gray-500 */
+        }
+        .dark .project-meta b {
+            color: #9ca3af; /* Corresponds to dark:text-gray-400 */
         }
 
 		.inlinelink{
