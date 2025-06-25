@@ -1,0 +1,22 @@
+     /* Use a common monospace font stack to match the original image's style */
+        body {
+            font-family: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+            /* Anti-aliasing for crisper text */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            /* Use dynamic viewport height to account for mobile browser UI */
+            min-height: 100dvh;
+        }
+        /* Style for the expandable content section for a smooth transition */
+        .expand-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+        }
+        .expand-content.expanded {
+            max-height: 9001px; /* It's over 9000! Adjust as needed. */
+        }
+		.inlinelink{
+		    text-decoration: underline;
+        }
+		
