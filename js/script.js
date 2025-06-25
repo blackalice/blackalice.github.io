@@ -171,4 +171,32 @@
                     console.error('Error scraping Letterboxd data:', error);
                     letterboxdFilmElement.textContent = 'Error fetching film data.';
                 });
+
+            // --- Steam Logic ---
+            const steamGameElement = document.getElementById('steam-game');
+            // IMPORTANT: Replace this URL with your actual Cloudflare Worker URL.
+            const steamWorkerUrl = 'https://steam-proxy.beangamer.workers.dev/';
+
+            fetch(steamWorkerUrl)
+                .then(response => {
+                    if (!response.ok) { throw new Error(`Worker responded with status: ${response.status}`); }
+                    return response.json();
+                })
+                .then(data => {
+                    // The Steam API returns an empty response object if the user has no recent games
+                    // or their profile is private.
+                    if (data.response && data.response.games && data.response.games.length > 0) {
+                        const topGame = data.response.games[0]; // API sorts by playtime_2weeks descending
+                        const playtimeMinutes = topGame.playtime_2weeks;
+                        const playtimeHours = (playtimeMinutes / 60).toFixed(1);
+
+                        steamGameElement.innerHTML = `Currently playing: <b>${topGame.name}</b> (${playtimeHours} hours in last 2 weeks)`;
+                    } else {
+                        steamGameElement.textContent = 'No recent game data available.';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching Steam data via Worker:', error);
+                    steamGameElement.textContent = 'Error fetching game data.';
+                });
         });
