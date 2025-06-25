@@ -125,52 +125,7 @@
                     trackElement.textContent = 'Error fetching song data.';
                 });
 
-            // --- Letterboxd Logic ---
-            const letterboxdFilmElement = document.getElementById('letterboxd-film');
-            const letterboxdUsername = 'stuart_foy';
-            const diaryUrl = `https://letterboxd.com/${letterboxdUsername}/films/diary/`;
-            const selector = 'tr.diary-entry-row:first-of-type';
-            const scraperUrl = `https://web.scraper.workers.dev/?url=${encodeURIComponent(diaryUrl)}&selector=${encodeURIComponent(selector)}&scrape=text&spaced=true`;
 
-            fetch(scraperUrl)
-                .then(response => {
-                     if (!response.ok) { throw new Error(`Scraper worker responded with status: ${response.status}`); }
-                     return response.json();
-                })
-                .then(data => {
-                    const scrapedText = data.result[selector] && data.result[selector][0];
-                    if (scrapedText) {
-                        const parts = scrapedText.split(/\s+/);
-                        let titleParts = [];
-                        let foundYear = false;
-                        for(let i = 3; i < parts.length; i++) {
-                           if (/^\d{4}$/.test(parts[i]) && !foundYear) {
-                               foundYear = true;
-                           }
-                           if(!foundYear){
-                               titleParts.push(parts[i]);
-                           }
-                        }
-                        
-                        const filmTitle = titleParts.join(' ');
-                        const ratingIndex = scrapedText.indexOf('★');
-                        const filmRating = ratingIndex !== -1 ? scrapedText.substring(ratingIndex).split(' ')[0] : 'No rating';
-
-                        if (filmTitle) {
-                             letterboxdFilmElement.textContent = `Last Watched: ${filmTitle} (${filmRating})`;
-                        } else {
-                             letterboxdFilmElement.textContent = 'Could not parse film title.';
-                        }
-
-                    } else {
-                        console.error("Scraper response did not contain expected data:", data);
-                        letterboxdFilmElement.textContent = 'Could not fetch recent film (scraper failed).';
-                    }
-                })
-                .catch(error => {
-                    console.error('Error scraping Letterboxd data:', error);
-                    letterboxdFilmElement.textContent = 'Error fetching film data.';
-                });
 
             // --- Steam Logic ---
             const steamGameElement = document.getElementById('steam-game');
@@ -199,4 +154,29 @@
                     console.error('Error fetching Steam data via Worker:', error);
                     steamGameElement.textContent = 'Error fetching game data.';
                 });
+        });
+
+
+            // --- Letterboxd Logic ---
+    const letterboxdFilmElement = document.getElementById('letterboxd-film');
+    const letterboxdWorkerUrl = 'https://letterboxd-proxy.beangamer.workers.dev/'; // <-- Replace with your worker URL
+
+    fetch(letterboxdWorkerUrl)
+        .then(response => {
+             if (!response.ok) { throw new Error(`Scraper worker responded with status: ${response.status}`); }
+             return response.json();
+        })
+        .then(data => {
+            if(data && data.title) {
+                const filmTitle = data.title;
+                const filmRating = data.rating ? data.rating.trim() : 'No rating';
+                letterboxdFilmElement.textContent = `Last Watched: ${filmTitle} (${filmRating})`;
+            } else {
+                console.error("Letterboxd scraper response did not contain expected data:", data);
+                letterboxdFilmElement.textContent = 'Could not fetch recent film.';
+            }
+        })
+        .catch(error => {
+            console.error('Error scraping Letterboxd data:', error);
+            letterboxdFilmElement.textContent = 'Error fetching film data.';
         });
