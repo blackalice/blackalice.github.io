@@ -1,0 +1,7 @@
+title: Stuart Foy's Homepage
+author: Stuart Foy
+description: The temporary homepage of Stuart Foy, a Creative Innovation Designer.
+
+# Exclude files from the build process
+exclude:
+  - README.md

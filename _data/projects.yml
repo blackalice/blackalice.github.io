@@ -1,0 +1,90 @@
+- id: project-1
+  title: "Jack Daniel’s x Parisa Tennessee Honey Boots"
+  brand: "Jack Daniel's"
+  year: 2024
+  role: "Creative Innovation Designer"
+  key_people: "Sarina de Costa Gomez, Parisa AKA badkidhq"
+  tools: "Boots: Stable Diffusion XL, Adobe Photoshop | Case Study: After Effects, VEO2"
+  video_id: 0WhEvtlj_JI
+  description: "Coming soon"
+
+- id: project-2
+  title: "The Things Launch Content"
+  brand: "British Gas"
+  year: 2025
+  role: "Creative Innovation Designer"
+  key_people: "-"
+  tools: "Google Imagen, Google VEO2, Adobe Photoshop, Adobe After Effects"
+  image: "https://placehold.co/1280x720/e2e8f0/7d7d7d?text=Project+Image"
+  image_alt: "Placeholder image for a project"
+  description: "Coming soon"
+
+- id: project-3
+  title: "■■■■ ■■ ■■■ ■■■■■■"
+  brand: "Toyota"
+  year: 2024
+  role: "Creative Innovation Designer"
+  key_people: "Simon Spilsbury"
+  tools: "Stable Diffusion XL, Photoshop, Runway"
+  image: "/images/NDA.webp"
+  image_alt: "NDA"
+  onerror_url: "https://placehold.co/1280x720/e2e8f0/7d7d7d?text=NDA"
+  description: "NDA'd to death, but I love this project. Worked with Simon Spilsbury"
+
+- id: project-4
+  title: "Social Content"
+  brand: "Hawkstone"
+  year: "2024-2025"
+  role: "Creative Innovation Designer"
+  key_people: "Sarina de Costa Gomez, Tom White, Tom Sutton"
+  tools: "Adobe Photoshop, Adobe After Effects, Google VEO2/3, Runway Gen3/4"
+  image: "https://placehold.co/1280x720/e2e8f0/7d7d7d?text=Project+Image"
+  image_alt: "Placeholder image for a project"
+  description: "Coming soon"
+
+- id: project-5
+  title: "Sora in Azure OpenAI"
+  brand: "Microsoft"
+  year: 2025
+  role: "Creative Innovation Designer"
+  key_people: "-"
+  tools: "Microsoft Azure, OpenAI Sora, ComfyUI, Elevenlabs, FFMPEG Python, Google Gemini, ChatGPT 4o"
+  video_id: IkF2HwCmoJM
+  description: "Automated video creation, creating video, scripts, voiceovers and prompts all from a simple drop down menu. Custom ComfyUI tooling was made to work with the unreleased Sora API, along with additional nodes for script writing and audiomixing."
+
+- id: project-6
+  title: "DDR Score Scraper & Analyser"
+  brand: "Personal Project"
+  year: 2024
+  role: "Creator, Developer"
+  key_people: "-"
+  tools: "Google Gemini, BeautifulSoup, Gradio"
+  image: "/images/ddr.webp"
+  image_alt: "Placeholder image for a project"
+  description: "A tool to scrape DDR scores from an unoffical E-Amusement server and analyise them. Create all sorts of graphs and stats, for fun and no profit. Extremly niche, but super cool to see how I've improved as a player over time! Likely wouldn't exist if the server owner just made an API, you know?"
+
+- id: project-7
+  title: "Design, Creative, Motion Graphics and 3D Animation"
+  brand: "NatWest"
+  year: "2022-2023"
+  role: "Design, Creative, Motion Graphics, 3D Animation"
+  key_people: "Ben Rumble & Loui Bowes"
+  tools: "Adobe After Effects, Blender, Adobe Photoshop"
+  video_id: "mFBWqxb5P4U?si=-FScF3f-U7891WgH"
+  description: "A selection of 2D & 3D animations, 3D models, motion graphics and designs created for NatWest between the second half of 2022 and the start of 2023"
+
+- id: project-8
+  title: "Customizable Product Video"
+  brand: "Coutts"
+  year: 2023
+  role: "Creative Innovation Designer"
+  key_people: "Elaine Mathieson"
+  tools: "Adobe After Effects, Blender, Adobe Photoshop"
+  video_id: "poROjGig_hI?si=9PhyQVwnsWBG350Q"
+  description: |
+    <div class="space-y-2">
+        <p><b>The Brief</b></p>
+        <p>Create a customizable video to send to Coutts customers applying for a product. The video needed to have customizable sections of text, and not be overly distracting to ensure the customer listens to the voiceover (as the video doubled up as a legal document).</p>
+        <p><b>The Solution</b></p>
+        <p>Take the bees wax sculpture commissioned for Coutts, the debit card visual and bring it to life in 3D. By creating a selection of different shots the video can be lengthened or shortened depending on the customer. Simple animated text frames are interspersed, depending on the voice over.</p>
+    </div>

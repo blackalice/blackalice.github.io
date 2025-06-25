@@ -1,321 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stuart Foy's Homepage</title>
-    <script src="js/theme-init.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="js/tailwind-config.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body class="bg-white text-black dark:bg-custom-dark dark:text-white flex flex-col">
+---
+layout: default
+title: Stuart Foy's Homepage
+---
 
-    <!-- Main content area that grows to push the footer down, while centering the content block -->
-    <main class="flex-grow flex items-center justify-center">
-        <!-- Container to limit width on large screens -->
-        <div class="max-w-3xl mx-auto w-full p-4 sm:p-8">
+<!-- Header Section -->
+<div class="flex justify-between items-center mb-6">
+    <h1 class="font-bold">the temporary homepage of stuart foy</h1>
+    <p class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(AOL™ Keyword: stu)</p>
+</div>
 
-            <!-- Header Section -->
-            <div class="flex justify-between items-center mb-6">
-                <h1 class="font-bold">the temporary homepage of stuart foy</h1>
-                <p class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(AOL™ Keyword: stu)</p>
-            </div>
-
-            <!-- Links Section -->
-            <div class="divide-y divide-gray-200 dark:divide-gray-700">
-                
-                <!-- About me section Wrapper -->
-                <div class="py-3">
-                    <button id="about-toggle" class="w-full flex justify-between items-center group">
-                        <span class="group-hover:text-red-600 dark:group-hover:text-red-500 flex items-center"><i class="fa-solid fa-user link-icon"></i>who? <span id="about-arrow" class="toggle-arrow ml-2">↓</span></span>
-                        <span class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(about me)</span>
-                    </button>
-                    <div id="about-content" class="expand-content">
-                        <div class="p-4 mt-2 border border-gray-200 dark:border-gray-700 rounded-lg flow-root">
-                            <img id="about-image" src="images/stu.webp" alt="A photo of Stuart Foy" class="rounded-md w-24 h-24 float-left mr-4 mb-2" onerror="this.onerror=null;this.src='https://placehold.co/100x100/e2e8f0/7d7d7d?text=Image+not+found';">
-                            <p class="text-sm">
-                                <b>Stuart Foy</b> is a <b>Creative Innovation Designer</b> <i>(or Creative Technologist, or Content Creator, or Designer, or Creative, or Motion Designer depending on the day)</i>.<br><br>
-                                They're currently at <a class="inlinelink" href="https://www.tandpgroup.com/">T&P</a> where they've been since 2018 and has lived through enough name changes that they've lost count.<br><br>
-                                They love to play with new technlogy, old technlogy and things in general. They started their career as a designer but realised they loved doing too many things to stay in a single discipline.<br><br>
-                                Outside of work they can be found playing <a class="inlinelink" href="http://instagram.com/p/DJy18t8oRZj/">DanceDanceRevolution</a>  at the arcade, enjoying standup comedy, going on long walks with their camera, supporting 2025 Scottish Cup Winnners Aberdeen and enjoying all things cute and fun.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Email Link -->
-                <div class="flex justify-between items-center py-3">
-                    <a href="mailto:stu@rtfoy.co.uk" class="hover:text-red-600 dark:hover:text-red-500"><i class="fa-solid fa-envelope link-icon"></i>email me!</a>
-                    <a href="mailto:stu@rtfoy.co.uk" class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(stu@rtfoy.co.uk)</a>
-                </div>
-             <!-- Work Section -->
-                <div class="py-3">
-                    <button id="work-toggle" class="w-full flex justify-between items-center group">
-                        <span class="group-hover:text-red-600 dark:group-hover:text-red-500 flex items-center"><i class="fa-solid fa-briefcase link-icon"></i>my work <span id="work-arrow" class="toggle-arrow ml-2">↓</span></span>
-                        <span class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(selected projects)</span>
-                    </button>
-                    <div id="work-content" class="expand-content">
-                        <div class="p-4 mt-2 border border-gray-200 dark:border-gray-700 rounded-lg divide-y divide-gray-200 dark:divide-gray-700">
-                            
-                            <!-- Project 1 -->
-                            <div id="project-1" class="py-3">
-                                <button class="project-toggle w-full flex justify-between items-baseline group">
-                                    <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">Jack Daniel's - Jack Daniel’s x Parisa Tennessee Honey Boots <span class="project-arrow toggle-arrow">↓</span> </span>
-                                    <span class="text-gray-500 dark:text-gray-400 whitespace-nowrap pl-4">2024</span>
-                                </button>
-                                <div class="project-content expand-content">
-                                    <div class="pt-4 space-y-4 text-sm">
-                                        <div class="project-meta grid grid-cols-[auto_1fr] gap-x-4 gap-y-1">
-                                            <b>Brand:</b>       <span>Jack Daniel's</span>
-                                            <b>Role:</b>        <span>Creative Innovation Designer</span>
-                                            <b>Key People:</b>  <span>Sarina de Costa Gomez, Parisa AKA badkidhq</span>
-                                            <b>Tools:</b>       <span>Boots: Stable Diffusion XL, Adobe Photoshop | Case Study: After Effects, VEO2</span>
-                                        </div>
-                                        <div class="aspect-video">
-                                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/0WhEvtlj_JI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
-                                        <p>Coming soon</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Project 2 -->
-                             <div id="project-2" class="py-3">
-                                <button class="project-toggle w-full flex justify-between items-baseline group">
-                                    <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">British Gas - The Things Launch Content <span class="project-arrow toggle-arrow">↓</span> </span>
-                                    <span class="text-gray-500 dark:text-gray-400 whitespace-nowrap pl-4">2025</span>
-                                </button>
-                                <div class="project-content expand-content">
-                                    <div class="pt-4 space-y-4 text-sm">
-                                        <div class="project-meta grid grid-cols-[auto_1fr] gap-x-4 gap-y-1">
-                                            <b>Brand:</b>       <span>British Gas</span>
-                                            <b>Role:</b>        <span>Creative Innovation Designer</span>
-                                            <b>Key People:</b>  <span>-</span>
-                                            <b>Tools:</b>       <span>Google Imagen, Google VEO2, Adobe Photoshop, Adobe After Effects</span>
-                                        </div>
-                                        <div class="aspect-video">
-                                            <img src="https://placehold.co/1280x720/e2e8f0/7d7d7d?text=Project+Image" alt="Placeholder image for a project" class="w-full h-full object-cover rounded-md">
-                                        </div>
-                                        <p>Coming soon</p>
-                                    </div>
-                                </div>
-                            </div>
-							<!-- Project 3 -->
-                             <div id="project-3" class="py-3">
-                                <button class="project-toggle w-full flex justify-between items-baseline group">
-                                    <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">Toyota - ■■■■ ■■ ■■■ ■■■■■■ <span class="project-arrow toggle-arrow">↓</span> </span>
-                                    <span class="text-gray-500 dark:text-gray-400 whitespace-nowrap pl-4">2024</span>
-                                </button>
-                                <div class="project-content expand-content">
-                                    <div class="pt-4 space-y-4 text-sm">
-                                        <div class="project-meta grid grid-cols-[auto_1fr] gap-x-4 gap-y-1">
-                                            <b>Brand:</b>       <span>Toyota</span>
-                                            <b>Role:</b>        <span>Creative Innovation Designer</span>
-                                            <b>Key People:</b>  <span>Simon Spilsbury</span>
-                                            <b>Tools:</b>       <span>Stable Diffusion XL, Photoshop, Runway</span>
-                                        </div>
-                                        <div class="aspect-video">
-                                            <img src="images/NDA.webp" alt="NDA" class="w-full h-full object-cover rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/1280x720/e2e8f0/7d7d7d?text=NDA';">
-                                        </div>
-                                        <p>NDA'd to death, but I love this project. Worked with Simon Spilsbury</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Project 4 -->
-                             <div id="project-4" class="py-3">
-                                <button class="project-toggle w-full flex justify-between items-baseline group">
-                                    <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">Hawkstone - Social Content <span class="project-arrow toggle-arrow">↓</span> </span>
-                                    <span class="text-gray-500 dark:text-gray-400 whitespace-nowrap pl-4">2024-2025</span>
-                                </button>
-                                <div class="project-content expand-content">
-                                    <div class="pt-4 space-y-4 text-sm">
-                                        <div class="project-meta grid grid-cols-[auto_1fr] gap-x-4 gap-y-1">
-                                            <b>Brand:</b>       <span>Hawkstone</span>
-                                            <b>Role:</b>        <span>Creative Innovation Designer</span>
-                                            <b>Key People:</b>  <span>Sarina de Costa Gomez, Tom White, Tom Sutton</span>
-                                            <b>Tools:</b>       <span>Adobe Photoshop, Adobe After Effects, Google VEO2/3, Runway Gen3/4</span>
-                                        </div>
-                                        <div class="aspect-video">
-                                            <img src="https://placehold.co/1280x720/e2e8f0/7d7d7d?text=Project+Image" alt="Placeholder image for a project" class="w-full h-full object-cover rounded-md">
-                                        </div>
-                                        <p>Coming soon</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Project 5 -->
-                             <div id="project-5" class="py-3">
-                                <button class="project-toggle w-full flex justify-between items-baseline group">
-                                    <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">Microsoft - Sora in Azure OpenAI <span class="project-arrow toggle-arrow">↓</span> </span>
-                                    <span class="text-gray-500 dark:text-gray-400 whitespace-nowrap pl-4">2025</span>
-                                </button>
-                                <div class="project-content expand-content">
-                                    <div class="pt-4 space-y-4 text-sm">
-                                        <div class="project-meta grid grid-cols-[auto_1fr] gap-x-4 gap-y-1">
-                                            <b>Brand:</b>       <span>Microsoft</span>
-                                            <b>Role:</b>        <span>Creative Innovation Designer</span>
-                                            <b>Key People:</b>  <span>-</span>
-                                            <b>Tools:</b>       <span>Microsoft Azure, OpenAI Sora, ComfyUI, Elevenlabs, FFMPEG Python, Google Gemini, ChatGPT 4o</span>
-                                        </div>
-                                        <div class="aspect-video">
-                                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/IkF2HwCmoJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
-                                        <p>Automated video creation, creating video, scripts, voiceovers and prompts all from a simple drop down menu. Custom ComfyUI tooling was made to work with the unreleased Sora API, along with additional nodes for script writing and audiomixing.</p>
-                                    </div>
-                                </div>
-                            </div>
-							<!-- Project 6 -->
-                             <div id="project-6" class="py-3">
-                                <button class="project-toggle w-full flex justify-between items-baseline group">
-                                    <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">Personal - DDR Score Scraper & Analyser <span class="project-arrow toggle-arrow">↓</span> </span>
-                                    <span class="text-gray-500 dark:text-gray-400 whitespace-nowrap pl-4">2024</span>
-                                </button>
-                                <div class="project-content expand-content">
-                                    <div class="pt-4 space-y-4 text-sm">
-                                        <div class="project-meta grid grid-cols-[auto_1fr] gap-x-4 gap-y-1">
-                                            <b>Brand:</b>       <span>Personal Project</span>
-                                            <b>Role:</b>        <span>Creator, Developer</span>
-                                            <b>Key People:</b>  <span>-</span>
-                                            <b>Tools:</b>       <span>Google Gemini, BeautifulSoup, Gradio</span>
-                                        </div>
-                                        <div class="aspect-video">
-                                            <img src="images/ddr.webp" alt="Placeholder image for a project" class="w-full h-full object-cover rounded-md">
-                                        </div>
-                                        <p>A tool to scrape DDR scores from an unoffical E-Amusement server and analyise them. Create all sorts of graphs and stats, for fun and no profit. Extremly niche, but super cool to see how I've improved as a player over time! Likely wouldn't exist if the server owner just made an API, you know?</p>
-                                    </div>
-                                </div>
-                            </div>
-							<!-- Project 7 -->
-                             <div id="project-7" class="py-3">
-                                <button class="project-toggle w-full flex justify-between items-baseline group">
-                                    <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">NatWest - Design, Creative, Motion Graphics and 3D Animation <span class="project-arrow toggle-arrow">↓</span> </span>
-                                    <span class="text-gray-500 dark:text-gray-400 whitespace-nowrap pl-4">2022-2023</span>
-                                </button>
-                                <div class="project-content expand-content">
-                                    <div class="pt-4 space-y-4 text-sm">
-                                        <div class="project-meta grid grid-cols-[auto_1fr] gap-x-4 gap-y-1">
-                                            <b>Brand:</b>       <span>NatWest</span>
-                                            <b>Role:</b>        <span>Design, Creative, Motion Graphics, 3D Animation</span>
-                                            <b>Key People:</b>  <span>Ben Rumble & Loui Bowes</span>
-                                            <b>Tools:</b>       <span>Adobe After Effects, Blender, Adobe Photoshop</span>
-                                        </div>
-                                        <div class="aspect-video">
-                                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/mFBWqxb5P4U?si=-FScF3f-U7891WgH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
-                                        <p>A selection of 2D & 3D animations, 3D models, motion graphics and designs created for NatWest between the second half of 2022 and the start of 2023</p>
-                                    </div>
-                                </div>
-                            </div>	
-							<!-- Project 8 -->
-                             <div id="project-8" class="py-3">
-                                <button class="project-toggle w-full flex justify-between items-baseline group">
-                                    <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">Coutts - Customizable Product Video<span class="project-arrow toggle-arrow">↓</span> </span>
-                                    <span class="text-gray-500 dark:text-gray-400 whitespace-nowrap pl-4">2023</span>
-                                </button>
-                                <div class="project-content expand-content">
-                                    <div class="pt-4 space-y-4 text-sm">
-                                        <div class="project-meta grid grid-cols-[auto_1fr] gap-x-4 gap-y-1">
-                                            <b>Brand:</b>       <span>Coutts</span>
-                                            <b>Role:</b>        <span>Creative Innovation Designer</span>
-                                            <b>Key People:</b>  <span>Elaine Mathieson</span>
-                                            <b>Tools:</b>       <span>Adobe After Effects, Blender, Adobe Photoshop</span>
-                                        </div>
-                                        <div class="aspect-video">
-                                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/poROjGig_hI?si=9PhyQVwnsWBG350Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
-                                        <div class="space-y-2">
-                                            <p><b>The Brief</b></p>
-                                            <p>Create a customizable video to send to Coutts customers applying for a product. The video needed to have customizable sections of text, and not be overly distracting to ensure the customer listens to the voiceover (as the video doubled up as a legal document).</p>
-                                            <p><b>The Solution</b></p>
-                                            <p>Take the bees wax sculpture commissioned for Coutts, the debit card visual and bring it to life in 3D. By creating a selection of different shots the video can be lengthened or shortened depending on the customer. Simple animated text frames are interspersed, depending on the voice over.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>								
-							
-							
-							
-							
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bluesky Link -->
-                <div class="flex justify-between items-center py-3">
-                    <a href="https://bsky.app/profile/foy.bsky.social" class="hover:text-red-600 dark:hover:text-red-500"><i class="fa-brands fa-bluesky link-icon"></i>i'll never call them skeets</a>
-                    <a href="https://bsky.app/profile/foy.bsky.social" class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(bluesky)</a>
-                </div>
-
-                <!-- GitHub Link -->
-                <div class="flex justify-between items-center py-3">
-                    <a href="https://github.com/blackalice" class="hover:text-red-600 dark:hover:text-red-500"><i class="fa-brands fa-github link-icon"></i>code I almost definitely made an LLM write</a>
-                    <a href="https://github.com/blackalice" class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(github)</a>
-                </div>
-
-                <!-- LinkedIn Link -->
-                <div class="flex justify-between items-center py-3">
-                    <a href="https://www.linkedin.com/in/srfoy/" class="hover:text-red-600 dark:hover:text-red-500"><i class="fa-brands fa-linkedin link-icon"></i>serious business</a>
-                    <a href="https://www.linkedin.com/in/srfoy/" class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(linkedin)</a>
-                </div>
-
-                <!-- Instagram Link -->
-                <div class="flex justify-between items-center py-3">
-                    <a href="https://www.instagram.com/stuart_foy/" class="hover:text-red-600 dark:hover:text-red-500"><i class="fa-brands fa-instagram link-icon"></i>mostly bird photos and DDR scores</a>
-                    <a href="https://www.instagram.com/stuart_foy/" class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(instagram)</a>
-                </div>
-
-                <!-- Last.fm Link -->
-                <div class="py-3">
-                    <div class="flex justify-between items-center">
-                        <a href="https://www.last.fm/user/Rem1xed" class="hover:text-red-600 dark:hover:text-red-500"><i class="fa-brands fa-lastfm link-icon"></i>scrobbling is still cool</a>
-                        <a href="https://www.last.fm/user/Rem1xed" class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(last.fm)</a>
-                    </div>
-                    <div id="lastfm-track" class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-left">Loading...</div>
-                </div>
-
-
-                <!-- Letterboxd Link -->
-                <div class="py-3">
-                    <div class="flex justify-between items-center">
-                        <a href="https://letterboxd.com/stuart_foy/" class="hover:text-red-600 dark:hover:text-red-500"><i class="fa-brands fa-letterboxd link-icon"></i>bad movie opinions</a>
-                        <a href="https://letterboxd.com/stuart_foy/" class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(letterboxd)</a>
-                    </div>
-                    <div id="letterboxd-film" class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-left">Loading...</div>
-                </div>
-
-                <!-- Steam Link -->
-                <div class="py-3">
-                    <div class="flex justify-between items-center">
-                        <a href="https://steamcommunity.com/id/blackalice/" class="hover:text-red-600 dark:hover:text-red-500"><i class="fa-brands fa-steam link-icon"></i>videogames, assuming I have any time</a>
-                        <a href="https://steamcommunity.com/id/blackalice/" class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(steam)</a>
-                    </div>
-                    <div id="steam-game" class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-left">Loading...</div>
-                </div>
-
-            </div>
-        </div>
-    </main>
+<!-- Links Section -->
+<div class="divide-y divide-gray-200 dark:divide-gray-700">
     
-    <!-- Colophon Section -->
-    <div id="colophon-content" class="expand-content max-w-3xl mx-auto w-full px-4 sm:px-8">
-        <div class="p-4 mb-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-            <h3 class="font-bold mb-2">Colophon</h3>
-            <p class="text-sm">This page was built with HTML, Tailwind CSS, and a sprinkle of vanilla JavaScript. Live data pulled in using CloudFlare Workers, using the Steam/Last.FM APIs and Letterboxd is scraped once daily. Everything was developed collaboratively with Gemini 2.5.</p>
+    <!-- About me section Wrapper -->
+    <div class="py-3">
+        <button id="about-toggle" class="w-full flex justify-between items-center group">
+            <span class="group-hover:text-red-600 dark:group-hover:text-red-500 flex items-center"><i class="fa-solid fa-user link-icon"></i>who? <span id="about-arrow" class="toggle-arrow ml-2">↓</span></span>
+            <span class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(about me)</span>
+        </button>
+        <div id="about-content" class="expand-content">
+            <div class="p-4 mt-2 border border-gray-200 dark:border-gray-700 rounded-lg flow-root">
+                <img id="about-image" src="{{ '/images/stu.webp' | relative_url }}" alt="A photo of Stuart Foy" class="rounded-md w-24 h-24 float-left mr-4 mb-2" onerror="this.onerror=null;this.src='https://placehold.co/100x100/e2e8f0/7d7d7d?text=Image+not+found';">
+                <p class="text-sm">
+                    <b>Stuart Foy</b> is a <b>Creative Innovation Designer</b> <i>(or Creative Technologist, or Content Creator, or Designer, or Creative, or Motion Designer depending on the day)</i>.<br><br>
+                    They're currently at <a class="inlinelink" href="https://www.tandpgroup.com/">T&P</a> where they've been since 2018 and has lived through enough name changes that they've lost count.<br><br>
+                    They love to play with new technlogy, old technlogy and things in general. They started their career as a designer but realised they loved doing too many things to stay in a single discipline.<br><br>
+                    Outside of work they can be found playing <a class="inlinelink" href="http://instagram.com/p/DJy18t8oRZj/">DanceDanceRevolution</a>  at the arcade, enjoying standup comedy, going on long walks with their camera, supporting 2025 Scottish Cup Winnners Aberdeen and enjoying all things cute and fun.
+                </p>
+            </div>
         </div>
     </div>
     
-    <!-- Copyright Footer, anchored to the bottom -->
-    <footer class="text-center text-gray-500 dark:text-gray-400 text-sm p-4 relative">
-        <span>&copy; Stuart Foy 2025</span>
-        <button id="colophon-toggle-btn" class="underline hover:text-red-600 dark:hover:text-red-500 ml-2">Colophon</button>
-        <!-- Theme switcher button -->
-        <button id="theme-toggle" class="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">
-            <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-        </button>
-    </footer>
+    <!-- Email Link -->
+    {% assign email_link = site.data.social_links | where: "handle", "(stu@rtfoy.co.uk)" | first %}
+    {% if email_link %}
+    <div class="flex justify-between items-center py-3">
+        <a href="{{ email_link.url }}" class="hover:text-red-600 dark:hover:text-red-500"><i class="{{ email_link.icon }} link-icon"></i>{{ email_link.name }}</a>
+        <a href="{{ email_link.url }}" class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">{{ email_link.handle }}</a>
+    </div>
+    {% endif %}
 
-    <script src="js/script.js"></script>
-</body>
-</html>
+    <!-- Work Section -->
+    <div class="py-3">
+        <button id="work-toggle" class="w-full flex justify-between items-center group">
+            <span class="group-hover:text-red-600 dark:group-hover:text-red-500 flex items-center"><i class="fa-solid fa-briefcase link-icon"></i>my work <span id="work-arrow" class="toggle-arrow ml-2">↓</span></span>
+            <span class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(selected projects)</span>
+        </button>
+        <div id="work-content" class="expand-content">
+            <div class="p-4 mt-2 border border-gray-200 dark:border-gray-700 rounded-lg divide-y divide-gray-200 dark:divide-gray-700">
+                
+                {% for project in site.data.projects %}
+                <!-- Project {{ forloop.index }} -->
+                <div id="{{ project.id }}" class="py-3">
+                    <button class="project-toggle w-full flex justify-between items-baseline group">
+                        <span class="group-hover:text-red-600 dark:group-hover:text-red-500 text-left">{{ project.brand }} - {{ project.title }} <span class="project-arrow toggle-arrow">↓</span> </span>
+                        <span class="text-gray-500 dark:text-gray-400 whitespace-nowrap pl-4">{{ project.year }}</span>
+                    </button>
+                    <div class="project-content expand-content">
+                        <div class="pt-4 space-y-4 text-sm">
+                            <div class="project-meta grid grid-cols-[auto_1fr] gap-x-4 gap-y-1">
+                                <b>Brand:</b>       <span>{{ project.brand }}</span>
+                                <b>Role:</b>        <span>{{ project.role }}</span>
+                                <b>Key People:</b>  <span>{{ project.key_people }}</span>
+                                <b>Tools:</b>       <span>{{ project.tools }}</span>
+                            </div>
+                            <div class="aspect-video">
+                                {% if project.video_id %}
+                                <iframe class="w-full h-full" src="https://www.youtube.com/embed/{{ project.video_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                {% elsif project.image %}
+                                <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt }}" class="w-full h-full object-cover rounded-md" {% if project.onerror_url %}onerror="this.onerror=null;this.src='{{ project.onerror_url }}';"{% endif %}>
+                                {% endif %}
+                            </div>
+                            {% if project.description contains "<p>" %}
+                                {{ project.description }}
+                            {% else %}
+                                <p>{{ project.description }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Links -->
+    {% for link in site.data.social_links %}
+      {% if link.handle != '(stu@rtfoy.co.uk)' %}
+        <div class="py-3">
+            <div class="flex justify-between items-center">
+                <a href="{{ link.url }}" class="hover:text-red-600 dark:hover:text-red-500"><i class="{{ link.icon }} link-icon"></i>{{ link.name }}</a>
+                <a href="{{ link.url }}" class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">{{ link.handle }}</a>
+            </div>
+            {% if link.dynamic_id %}
+            <div id="{{ link.dynamic_id }}" class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-left">Loading...</div>
+            {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+
+</div>

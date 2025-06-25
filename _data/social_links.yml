@@ -1,0 +1,42 @@
+- name: email me!
+  url: mailto:stu@rtfoy.co.uk
+  handle: (stu@rtfoy.co.uk)
+  icon: fa-solid fa-envelope
+
+- name: i'll never call them skeets
+  url: https://bsky.app/profile/foy.bsky.social
+  handle: (bluesky)
+  icon: fa-brands fa-bluesky
+
+- name: code I almost definitely made an LLM write
+  url: https://github.com/blackalice
+  handle: (github)
+  icon: fa-brands fa-github
+
+- name: serious business
+  url: https://www.linkedin.com/in/srfoy/
+  handle: (linkedin)
+  icon: fa-brands fa-linkedin
+
+- name: mostly bird photos and DDR scores
+  url: https://www.instagram.com/stuart_foy/
+  handle: (instagram)
+  icon: fa-brands fa-instagram
+
+- name: scrobbling is still cool
+  url: https://www.last.fm/user/Rem1xed
+  handle: (last.fm)
+  icon: fa-brands fa-lastfm
+  dynamic_id: lastfm-track
+
+- name: bad movie opinions
+  url: https://letterboxd.com/stuart_foy/
+  handle: (letterboxd)
+  icon: fa-brands fa-letterboxd
+  dynamic_id: letterboxd-film
+
+- name: videogames, assuming I have any time
+  url: https://steamcommunity.com/id/blackalice/
+  handle: (steam)
+  icon: fa-brands fa-steam
+  dynamic_id: steam-game
