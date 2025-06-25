@@ -21,15 +21,22 @@
         });
         setButtonIcon();
 
-        // --- About Section Toggle Logic ---
-        const aboutToggleBtn = document.getElementById('about-toggle');
-        const aboutContent = document.getElementById('about-content');
-        const aboutArrow = document.getElementById('about-arrow');
+        // --- Reusable Toggle Logic ---
+        function setupExpandableSection(toggleId, contentId, arrowId) {
+            const toggleBtn = document.getElementById(toggleId);
+            const content = document.getElementById(contentId);
+            const arrow = document.getElementById(arrowId);
 
-        aboutToggleBtn.addEventListener('click', function() {
-            const isExpanded = aboutContent.classList.toggle('expanded');
-            aboutArrow.textContent = isExpanded ? '↑' : '↓';
-        });
+            if (toggleBtn && content && arrow) {
+                toggleBtn.addEventListener('click', function() {
+                    content.classList.toggle('expanded');
+                    arrow.classList.toggle('rotated');
+                });
+            }
+        }
+
+        // --- About Section Toggle Logic ---
+        setupExpandableSection('about-toggle', 'about-content', 'about-arrow');
 
         // --- Image Hover Logic ---
         const aboutImage = document.getElementById('about-image');
@@ -45,14 +52,7 @@
         });
 
         // --- Work Section Toggle Logic ---
-        const workToggleBtn = document.getElementById('work-toggle');
-        const workContent = document.getElementById('work-content');
-        const workArrow = document.getElementById('work-arrow');
-
-        workToggleBtn.addEventListener('click', function() {
-            const isExpanded = workContent.classList.toggle('expanded');
-            workArrow.textContent = isExpanded ? '↑' : '↓';
-        });
+        setupExpandableSection('work-toggle', 'work-content', 'work-arrow');
 
         // --- Project Toggles Logic ---
         const projectToggleBtns = document.querySelectorAll('.project-toggle');
@@ -61,9 +61,8 @@
             btn.addEventListener('click', function() {
                 const content = this.nextElementSibling;
                 const arrow = this.querySelector('.project-arrow');
-                const isExpanded = content.classList.toggle('expanded');
-                
-                arrow.textContent = isExpanded ? '↑' : '↓';
+                content.classList.toggle('expanded');
+                arrow.classList.toggle('rotated');
             });
         });
 
@@ -78,6 +77,10 @@
 
         // --- Anchor Link & API Logic ---
         window.addEventListener('load', () => {
+            // Define these here to make them available for the anchor logic
+            const workContent = document.getElementById('work-content');
+            const workArrow = document.getElementById('work-arrow');
+
             // --- Anchor Link Logic ---
             const hash = window.location.hash;
             if (hash) {
@@ -85,14 +88,14 @@
                 if (projectDiv && projectDiv.closest('#work-content')) {
                     if (!workContent.classList.contains('expanded')) {
                         workContent.classList.add('expanded');
-                        workArrow.textContent = '↑';
+                        workArrow.classList.add('rotated');
                     }
                     const toggleButton = projectDiv.querySelector('.project-toggle');
                     const projectContent = toggleButton.nextElementSibling;
                     const projectArrow = toggleButton.querySelector('.project-arrow');
                     if (projectContent && !projectContent.classList.contains('expanded')) {
                         projectContent.classList.add('expanded');
-                        projectArrow.textContent = '↑';
+                        projectArrow.classList.add('rotated');
                     }
                     setTimeout(() => {
                         projectDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });

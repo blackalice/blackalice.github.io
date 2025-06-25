@@ -1,4 +1,7 @@
-     /* Use a common monospace font stack to match the original image's style */
+        html {
+            overflow-y: scroll;
+        }
+        /* Use a common monospace font stack to match the original image's style */
         body {
             font-family: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
             /* Anti-aliasing for crisper text */
@@ -11,12 +14,30 @@
         .expand-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+            will-change: max-height;
+            transition: max-height 0.7s cubic-bezier(0.25,0.1,0.25,1);
         }
         .expand-content.expanded {
             max-height: 9001px; /* It's over 9000! Adjust as needed. */
         }
+        /* Style for the rotating arrow on toggle buttons */
+        .toggle-arrow {
+            display: inline-block; /* Ensures the transform property works */
+            transition: transform 0.3s ease; /* Slightly increased duration for arrow rotation */
+        }
+
+        .toggle-arrow.rotated {
+            transform: rotate(180deg);
+        }
+
 		.inlinelink{
 		    text-decoration: underline;
         }
 		
+        /* Custom styles for icons */
+        .link-icon {
+            margin-right: 0.7em; /* Space between icon and text */
+            font-size: 0.9em; /* Slightly smaller than text */
+            vertical-align: middle; /* Align with text */
+            color:#ef4444;
+        }
