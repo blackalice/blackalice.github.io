@@ -1,26 +1,3 @@
-/* --- Core Styles for Interactive Elements --- */
-.expand-content {
-    max-height: 0;
-    overflow: hidden;
-    visibility: hidden;
-    transition: max-height 0.5s ease-in-out, visibility 0s linear 0.5s;
-}
-
-.expand-content.expanded {
-    max-height: 2000px; /* A large value to accommodate content */
-    visibility: visible;
-    transition: max-height 0.5s ease-in-out, visibility 0s linear 0s;
-}
-
-.toggle-arrow {
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.toggle-arrow.rotated {
-    transform: rotate(180deg);
-}
-
 /* --- DDR Mode Easter Egg --- */
 body.ddr-mode {
     font-family: 'Press Start 2P', cursive !important;
