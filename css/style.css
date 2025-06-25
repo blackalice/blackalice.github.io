@@ -1,51 +1,31 @@
-        html {
-            overflow-y: scroll;
-        }
-        /* Use a common monospace font stack to match the original image's style */
-        body {
-            font-family: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
-            /* Anti-aliasing for crisper text */
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            /* Use dynamic viewport height to account for mobile browser UI */
-            min-height: 100dvh;
-        }
-        /* Style for the expandable content section for a smooth transition */
-        .expand-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.0);
-        }
-        .expand-content.expanded {
-            max-height: 9001px; /* It's over 9000! Adjust as needed. */
-        }
-        /* Style for the rotating arrow on toggle buttons */
-        .toggle-arrow {
-            display: inline-block; /* Ensures the transform property works */
-            transition: transform 0.2s ease-in-out;
-        }
+/* --- DDR Mode Easter Egg --- */
+body.ddr-mode {
+    font-family: 'Press Start 2P', cursive !important;
+    background-color: #000022 !important;
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.2) 1px, transparent 1px);
+    background-size: 20px 20px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
 
-        .toggle-arrow.rotated {
-            transform: rotate(180deg);
-        }
+body.ddr-mode .text-red-600,
+body.ddr-mode .dark\:text-red-500 {
+    color: #ffff00 !important; /* Bright yellow accent */
+}
 
-        /* Styles for the project metadata grid */
-        .project-meta b {
-            font-weight: normal;
-            color: #6b7280; /* Corresponds to text-gray-500 */
-        }
-        .dark .project-meta b {
-            color: #9ca3af; /* Corresponds to dark:text-gray-400 */
-        }
+body.ddr-mode a:hover,
+body.ddr-mode button.group:hover span {
+    color: #ff00ff !important; /* Bright magenta hover */
+}
 
-		.inlinelink{
-		    text-decoration: underline;
-        }
-		
-        /* Custom styles for icons */
-        .link-icon {
-            margin-right: 0.7em; /* Space between icon and text */
-            font-size: 0.9em; /* Slightly smaller than text */
-            vertical-align: middle; /* Align with text */
-            color:#ef4444;
-        }
+body.ddr-mode .link-icon {
+    color: #00ffff !important; /* Cyan icons */
+}
+
+body.ddr-mode main > div {
+    border: 2px solid #ffff00;
+    box-shadow: 0 0 10px #ffff00;
+    background-color: rgba(0, 0, 20, 0.7);
+}

@@ -183,3 +183,27 @@
             console.error('Error scraping Letterboxd data:', error);
             letterboxdFilmElement.textContent = 'Error fetching film data.';
         });
+
+
+// --- Konami Code Easter Egg ---
+const konamiCode = [
+    'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+    'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
+    'b', 'a'
+];
+let konamiIndex = 0;
+const secretAudio = new Audio('/audio/secret.mp3'); // Path to your secret sound
+
+document.addEventListener('keydown', (e) => {
+    // Use e.key and convert to lower case for case-insensitive matching
+    if (e.key.toLowerCase() === konamiCode[konamiIndex].toLowerCase()) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+            document.body.classList.toggle('ddr-mode');
+            secretAudio.play();
+            konamiIndex = 0; // Reset for next time
+        }
+    } else {
+        konamiIndex = 0; // Wrong key, reset
+    }
+});
