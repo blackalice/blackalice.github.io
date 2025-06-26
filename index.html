@@ -83,4 +83,16 @@ title: Stuart Foy's Homepage
       {% endif %}
     {% endfor %}
 
+    <!-- Roast Section -->
+    <div class="py-3">
+        <button id="roast-button" class="w-full flex justify-between items-center group">
+            <span class="group-hover:text-red-600 dark:group-hover:text-red-500 flex items-center">
+                <i class="fa-solid fa-fire link-icon"></i>Dial Roast Button
+            </span>
+            <span class="text-red-600 dark:text-red-500 whitespace-nowrap pl-4">(courtesy of Gemini)</span>
+        </button>
+        <div id="roast-content" class="text-sm text-gray-500 dark:text-gray-400 mt-2 p-4 border border-gray-200 dark:border-gray-700 rounded-lg hidden">
+            <p id="roast-text">Click the button to get roasted...</p>
+        </div>
+    </div>
 </div>
